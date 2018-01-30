@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head><title>HW7.html</title>
+</head>
+<body>
+<center>
+<script>
+ 
+   function GetVolume( l, w, h )
+         {
+           var Result = l * w * h;
+           return Result;
+         }
+
+   function startProcess()
+         {
+           var Length, Width, Height;
+           var vol, volumeSize;
+           var i = 0;
+           
+           while( i <= 10 )
+              {
+                 i++;
+
+                 Length = i + 2;
+                 Width = i + 3;
+                 Height = i + 4;
+
+                 vol = GetVolume( Length, Width, Height );
+
+                
+                 if((vol >= 60) && (vol <= 70))
+                    { volumeSize = 'Small'; }
+                 else if((vol >= 71) && (vol <= 80))
+                    { volumeSize = 'Medium'; }
+                 else if((vol >= 81) && (vol <= 90))
+                    { volumeSize = 'Large'; }
+                 else if((vol >= 91) && (vol <= 100))
+                    { volumeSize = 'Extra Large'; }
+                 else if( vol > 100 ) 
+                    { volumeSize = 'Extremely Large'; }
+ 
+                
+                 switch(volumeSize) 
+                    { 
+                      case 'Small':
+                         document.write('<h3>You have Small Volume: ' + vol + '</h3>'); 
+                         break;
+                      case 'Medium':
+                         document.write('<h3>You have Medium Volume: ' + vol + '</h3>');
+                         break;
+                      case 'Large':
+                         document.write('<h3>You have Large Volume: ' + vol + '</h3>');
+                         break;
+                      case 'Extra Large': 
+                         document.write('<h3>You have Extra Large Volume: ' + vol + '</h3>'); 
+                         break;
+                      case 'Extremely Large': 
+                         document.write('<h3>You have Extremely Large Volume: ' + vol + '</h3>'); 
+                         break;
+                      default:
+                         document.write('<h3>You have an undefined volume.</h3>'); 
+                         break;
+                   }
+                 
+               }
+           }
+
+   startProcess();
+
+</script>
+</center>
+</body>
+</html> 
